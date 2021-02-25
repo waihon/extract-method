@@ -15,7 +15,7 @@ class ReceiptPrinter
   def print
     subtotal = items.reduce(0) do |sum, item|
       item_cost = COST[item]
-      output.puts "#{item}: #{sprintf('$%.2f', item_cost)}"
+      output.puts line(label: item, amount: item_cost)
 
       sum + item_cost.to_i
     end
