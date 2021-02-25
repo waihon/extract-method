@@ -22,7 +22,7 @@ class ReceiptPrinter
 
     output.puts divider
     output.puts line(label: "subtotal", amount: subtotal)
-    output.puts line(label: "tax", amount: subtotal * TAX)
+    output.puts line(label: "tax", amount: tax(amount: subtotal))
     output.puts divider
     output.puts line(label: "total", amount: subtotal + (subtotal * TAX))
   end
