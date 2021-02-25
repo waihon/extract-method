@@ -38,4 +38,8 @@ class ReceiptPrinter
   def line(label:, amount:)
     "#{label}: #{sprintf('$%.2f', amount)}"
   end
+
+  def tax(amount:)
+    amount * TAX
+  end
 end
