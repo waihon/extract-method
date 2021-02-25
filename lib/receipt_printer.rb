@@ -34,4 +34,8 @@ class ReceiptPrinter
   def divider
     '-' * 13
   end
+
+  def line(label:, amount:)
+    "#{label}: #{sprintf('$%.2f', amount)}"
+  end
 end
