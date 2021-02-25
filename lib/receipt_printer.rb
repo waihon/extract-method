@@ -24,7 +24,7 @@ class ReceiptPrinter
     output.puts line(label: "subtotal", amount: subtotal)
     output.puts line(label: "tax", amount: tax(amount: subtotal))
     output.puts divider
-    output.puts line(label: "total", amount: subtotal + (subtotal * TAX))
+    output.puts line(label: "total", amount: total(amount: subtotal))
   end
 
   private
@@ -41,5 +41,9 @@ class ReceiptPrinter
 
   def tax(amount:)
     amount * TAX
+  end
+
+  def total(amount:)
+    amount + (amount * TAX)
   end
 end
