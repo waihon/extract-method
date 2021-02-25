@@ -24,7 +24,7 @@ class ReceiptPrinter
     output.puts line(label: "subtotal", amount: subtotal)
     output.puts line(label: "tax", amount: subtotal * TAX)
     output.puts divider
-    output.puts "total: #{sprintf('$%.2f', subtotal + (subtotal * TAX))}"
+    output.puts line(label: "total", amount: subtotal + (subtotal * TAX))
   end
 
   private
