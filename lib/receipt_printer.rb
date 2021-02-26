@@ -46,4 +46,8 @@ class ReceiptPrinter
   def total(amount:)
     amount + (amount * TAX)
   end
+
+  def output_with(label:, cost:)
+    output.puts "#{label}: #{sprintf('$%.2f', cost)}"
+  end
 end
