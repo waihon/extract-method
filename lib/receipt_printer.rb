@@ -13,7 +13,7 @@ class ReceiptPrinter
   end
 
   def print
-    subtotal = items.reduce(0) do |sum, item|
+    items.reduce(0) do |sum, item|
       item_cost = COST[item]
       output_with label: item,cost: item_cost
 
