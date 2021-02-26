@@ -15,16 +15,16 @@ class ReceiptPrinter
   def print
     subtotal = items.reduce(0) do |sum, item|
       item_cost = COST[item]
-      output.puts line(label: item, amount: item_cost)
+      output_with label: item,cost: item_cost
 
       sum + item_cost.to_i
     end
 
     output.puts divider
-    output.puts line(label: "subtotal", amount: subtotal)
-    output.puts line(label: "tax", amount: tax(amount: subtotal))
+    output_with label: "subtotal", cost: subtotal
+    output_with label: "tax",cost: tax(amount: subtotal)
     output.puts divider
-    output.puts line(label: "total", amount: total(amount: subtotal))
+    output_with label: "total", cost: total(amount: subtotal)
   end
 
   private
@@ -33,10 +33,6 @@ class ReceiptPrinter
 
   def divider
     '-' * 13
-  end
-
-  def line(label:, amount:)
-    "#{label}: #{sprintf('$%.2f', amount)}"
   end
 
   def tax(amount:)
