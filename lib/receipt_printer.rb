@@ -16,8 +16,7 @@ class ReceiptPrinter
     output_items
 
     output.puts divider
-    output_with label: "subtotal", cost: subtotal
-    output_with label: "tax",cost: tax(amount: subtotal)
+    output_subtotals
     output.puts divider
     output_with label: "total", cost: total(amount: subtotal)
   end
