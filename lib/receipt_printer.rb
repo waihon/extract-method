@@ -62,7 +62,7 @@ class ReceiptPrinter
   end
 
   def output_total
-    output_with label: "total", cost: total(amount: subtotal)
+    total_line
   end
 
   def total_line
