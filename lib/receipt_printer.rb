@@ -56,6 +56,12 @@ class ReceiptPrinter
     end
   end
 
+  def item_lines
+    items.each do |item|
+      output_with label: item, cost: item_cost(item)
+    end
+  end
+
   def output_subtotals
     subtotal_line
     tax_line
