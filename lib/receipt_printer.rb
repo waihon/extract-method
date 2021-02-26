@@ -51,9 +51,7 @@ class ReceiptPrinter
   end
 
   def output_items
-    items.each do |item|
-      output_with label: item, cost: item_cost(item)
-    end
+    item_lines
   end
 
   def item_lines
