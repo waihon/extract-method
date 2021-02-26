@@ -46,4 +46,8 @@ class ReceiptPrinter
   def output_with(label:, cost:)
     output.puts "#{label}: #{sprintf('$%.2f', cost)}"
   end
+
+  def item_cost(item)
+    COST[item]
+  end
 end
