@@ -61,4 +61,8 @@ class ReceiptPrinter
     output_with label: "subtotal", cost: subtotal
     output_with label: "tax",cost: tax(amount: subtotal)
   end
+
+  def output_total
+    output_with label: "total", cost: total(amount: subtotal)
+  end
 end
