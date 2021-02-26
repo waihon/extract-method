@@ -14,11 +14,10 @@ class ReceiptPrinter
 
   def print
     output_items
-
     output.puts divider
     output_subtotals
     output.puts divider
-    output_with label: "total", cost: total(amount: subtotal)
+    output_total
   end
 
   private
