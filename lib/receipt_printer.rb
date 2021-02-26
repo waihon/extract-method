@@ -68,4 +68,8 @@ class ReceiptPrinter
   def output_divider
     output.puts divider
   end
+
+  def divider_line
+    output.puts divider
+  end
 end
