@@ -13,9 +13,7 @@ class ReceiptPrinter
   end
 
   def print
-    items.each do |item|
-      output_with label: item, cost: item_cost(item)
-    end
+    output_items
 
     output.puts divider
     output_with label: "subtotal", cost: subtotal
