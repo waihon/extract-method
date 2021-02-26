@@ -13,11 +13,8 @@ class ReceiptPrinter
   end
 
   def print
-    items.reduce(0) do |sum, item|
-      item_cost = COST[item]
-      output_with label: item,cost: item_cost
-
-      sum + item_cost.to_i
+    items.each do |item|
+      output_with label: item, cost: item_cost(item)
     end
 
     output.puts divider
