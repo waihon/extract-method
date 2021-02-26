@@ -50,4 +50,10 @@ class ReceiptPrinter
   def item_cost(item)
     COST[item]
   end
+
+  def subtotal
+    @_subtotal ||= items.reduce(0) do |sum, item|
+      sum + item_cost(item)
+    end
+  end
 end
